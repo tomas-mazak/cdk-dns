@@ -1,9 +1,9 @@
 {
-  "name": "cdk-dns",
+  "name": "@tomas-mazak/cdk-dns",
   "description": "High level constructs to setup DNS infrastructure for larger enterprises with multiple accounts and hybrid setup",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tomas/cdk-dns.git"
+    "url": "https://github.com/tomas-mazak/cdk-dns.git"
   },
   "scripts": {
     "clobber": "npx projen clobber",
@@ -56,7 +56,13 @@
     "typescript": "^4.3.5"
   },
   "peerDependencies": {
+    "@aws-cdk/aws-lambda": "^1.95.2",
+    "@aws-cdk/custom-resources": "^1.95.2",
     "constructs": "^3.2.27"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-lambda": "^1.95.2",
+    "@aws-cdk/custom-resources": "^1.95.2"
   },
   "bundledDependencies": [],
   "keywords": [

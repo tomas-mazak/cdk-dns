@@ -1,4 +1,4 @@
-const { AwsCdkConstructLibrary } = require('projen');
+const { AwsCdkConstructLibrary, NodePackageManager } = require('projen');
 const project = new AwsCdkConstructLibrary({
   author: 'Tomas Mazak',
   authorAddress: 'tomas@valec.net',
@@ -9,13 +9,18 @@ const project = new AwsCdkConstructLibrary({
   devContainer: true,
   homepage: 'https://github.com/tomas-mazak/cdk-dns',
   name: 'cdk-dns',
-  repositoryUrl: 'https://github.com/tomas/cdk-dns.git',
+  repositoryUrl: 'https://github.com/tomas-mazak/cdk-dns.git',
+ 
+  packageManager: NodePackageManager.NPM,
+  packageName: '@tomas-mazak/cdk-dns',
 
-  // cdkDependencies: undefined,        /* Which AWS CDK modules (those that start with "@aws-cdk/") does this library require when consumed? */
+  cdkDependencies: [
+    '@aws-cdk/custom-resources',
+    '@aws-cdk/aws-lambda',
+  ],
   // cdkTestDependencies: undefined,    /* AWS CDK modules required for testing. */
   // deps: [],                          /* Runtime dependencies of this module. */
   // devDeps: [],                       /* Build dependencies for this module. */
-  // packageName: undefined,            /* The "name" in package.json. */
   // projectType: ProjectType.UNKNOWN,  /* Which type of project this is (library/app). */
   // release: undefined,                /* Add release management to this project. */
 });
