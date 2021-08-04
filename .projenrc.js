@@ -10,13 +10,16 @@ const project = new AwsCdkConstructLibrary({
   homepage: 'https://github.com/tomas-mazak/cdk-dns',
   name: 'cdk-dns',
   repositoryUrl: 'https://github.com/tomas-mazak/cdk-dns.git',
- 
+
   packageManager: NodePackageManager.NPM,
   packageName: '@tomas-mazak/cdk-dns',
 
   cdkDependencies: [
+    '@aws-cdk/core',
     '@aws-cdk/custom-resources',
     '@aws-cdk/aws-lambda',
+    '@aws-cdk/aws-ec2',
+    '@aws-cdk/aws-iam',
   ],
   // cdkTestDependencies: undefined,    /* AWS CDK modules required for testing. */
   // deps: [],                          /* Runtime dependencies of this module. */
